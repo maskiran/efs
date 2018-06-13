@@ -1,0 +1,74 @@
+{
+  // entity of a given type is displayed using its 'id' attribute. If
+  // a display attribute is provided using "display": <attrname> then a
+  // symlink will be provided from display to the id.
+  // The details of the entity are obtained using
+  // its "id" attribute.
+  // If an entity cannot be obtained individually (e.g alerts and events),
+  // then "accessible_by_id": false must be defined. In such cases, all
+  // the entities are obtained and then the particular entity is
+  // searched using the id.
+  //
+  // "<entity_types_string>": {
+  //    "id": "<id attribute of this entity>",
+  //    "display": "<attribute used to display this entity>",
+  //    "accessible_by_id": false (true is default if not defined)
+  // } 
+
+  "alerts": {
+    "id": "id",
+    "accessible_by_id": false
+  },
+
+  "containers": {
+    "id": "id",
+    "display": "name",
+    "create_properties": {
+      "name": "",
+      "storagePoolId": "",
+      "advertisedCapacity": 0,
+      "compressionDelayInSecs": 0,
+      "compressionEnabled": false,
+      "erasureCode": "off",
+      "erasureCodeDelaySecs": 0,
+      "maxCapacity": 0
+    }
+  },
+
+  "disks": {
+    "id": "id",
+    "display": "name"
+  },
+
+  "events": {
+    "id": "id",
+    "accessible_by_id": false
+  },
+
+  "hosts": {
+    "id": "uuid",
+    "display": "name"
+  },
+
+  "protection_domains": {
+    "id": "name"
+  },
+
+  "remote_sites": {
+    "id": "name"
+  },
+
+  "storage_pools": {
+    "id": "id",
+    "display": "name"
+  },
+
+  "vms": {
+    "id": "vmId",
+    "display": "vmName"
+  },
+
+  "vdisks": {
+    "id": "name"
+  }
+}

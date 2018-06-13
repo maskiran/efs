@@ -1,0 +1,16 @@
+#! /bin/bash
+
+# mount cfg-file mount-point
+
+cfg=$1
+mount_point=$2
+
+if [ "$cfg" = "" -o "$mount_point" = "" -o "$cfg" = "--help" -o "$cfg" = "-h" ]; then
+  echo "$0 <mnt-info-cfg-file> <mount-point>"
+  exit
+fi
+
+fusermount -u $mount_point 2>/dev/null
+
+dir_name=$(dirname $0)
+python $dir_name/efs.py --cfg $cfg $mount_point
